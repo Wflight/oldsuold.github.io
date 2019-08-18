@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title> 【luogu-4822】【BJWC2012】冻结		 | YuMo Shu の Blog</title><meta name="description" content=" 【luogu-4822】【BJWC2012】冻结		"><meta name="keywords" content="OI"><meta name="author" content="姝雨墨"><meta name="copyright" content="姝雨墨"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/32.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http:/oldsuold.github.io/2019/02/24/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content=" 【luogu-4822】【BJWC2012】冻结		"><meta name="twitter:description" content=" 【luogu-4822】【BJWC2012】冻结		"><meta name="twitter:image" content="http:/oldsuold.github.io/img/avatar.jpg"><meta property="og:type" content="article"><meta property="og:title" content=" 【luogu-4822】【BJWC2012】冻结		"><meta property="og:url" content="http:/oldsuold.github.io/2019/02/24/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/"><meta property="og:site_name" content="YuMo Shu の Blog"><meta property="og:description" content=" 【luogu-4822】【BJWC2012】冻结		"><meta property="og:image" content="http:/oldsuold.github.io/img/avatar.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title=" 【luogu-1083】【NOIP2012】借教室		" href="http:/oldsuold.github.io/2019/02/26/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/"><link rel="next" title=" 【luogu-4568】【JLOI2011】飞行路线		" href="http:/oldsuold.github.io/2019/02/24/e3-80-90luogu-4568-e3-80-91-e3-80-90jloi2011-e3-80-91-e9-a3-9e-e8-a1-8c-e8-b7-af-e7-ba-bf/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://jerryc.me/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: '添加书签',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天'
+
+  
+}</script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分层图最短路问题"><span class="toc-number">1.</span> <span class="toc-text">分层图最短路问题</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/post.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">YuMo Shu の Blog</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">姝雨墨的博客，记录我的生活</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle"> 【luogu-4822】【BJWC2012】冻结		</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-02-24<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-06-22</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/NOIP/">NOIP</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/NOIP/OI/">OI</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/NOIP/OI/模板/">模板</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/NOIP/OI/模板/省选题目/">省选题目</a></span><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">450</span><span class="post-meta__separator">|</span><span>阅读时长: 2 分钟</span><span class="post-meta__separator">|</span><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="分层图最短路问题"><a href="#分层图最短路问题" class="headerlink" title="分层图最短路问题"></a>分层图最短路问题</h2><p><code>分层图最短路</code>是指在可以进行<strong>分层图</strong>的图上解决最短路问题。 一般模型是： 在图上，有$K$次机会可以直接通过一条边，问起点与终点之间的最短路径。 <a href="https://www.luogu.org/problemnew/show/P4822" target="_blank" rel="noopener">P4822 【BJWC2012】冻结</a></p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;cmath&gt;
+#include&lt;cstring&gt;
+#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;algorithm&gt;
+
+#define inf 0x7fffffff
+//#include&lt;pair&gt;
+#include&lt;queue&gt;
+using namespace std;
+const int _M = 5100000;
+const int _N = 1100000;
+struct edges{
+    int node;
+    int w;
+    int nxt;
+    edges() {}
+    edges(int _node, int _w, int _nxt)
+    {
+        node = _node;
+        w = _w;
+        nxt = _nxt;
+    }
+}edge[_M];
+int head[_N];
+int tot = 0;
+int N = -inf;
+inline void add(int u, int v,int w)
+{
+    N = max(N, max(u, v));
+    edge[++tot] = edges(v, w, head[u]);
+    head[u] = tot;
+}
+int n, m, k;
+int s, t;
+
+priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt; &gt;, greater&lt;pair&lt;int, int&gt; &gt; &gt; Q;
+int dist[_N];
+bool vis[_N];
+void dijkstra()
+{
+    memset(vis, false, sizeof(vis));
+    memset(dist, 0x3f, sizeof(dist));
+    dist[s] = 0;
+    Q.push(make_pair(0, s));
+    while(!Q.empty())
+    {
+        int now = Q.top().second;
+        Q.pop();
+        if(!vis[now])
+        {
+            vis[now] = true;
+            for(register int i = head[now];i;i = edge[i].nxt)   
+            {
+                edges exNode = edge[i];
+                if(dist[exNode.node] &gt; dist[now] + exNode.w)
+                {
+                    dist[exNode.node] = dist[now] + exNode.w;
+                    Q.push(make_pair(dist[exNode.node], exNode.node));
+                }
+            }
+        }
+    }
+}
+
+int main()
+{
+    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;k);
+//  scanf(&quot;%d%d&quot;, &amp;s, &amp;t);
+    s = 1;t = n;
+    for(register int i = 1;i &lt;= m;i++)
+    {
+        int u, v, w;
+        scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+        add(u, v, w);
+        add(v, u, w);
+        for(register int j = 1;j &lt;= k;j++)
+        {
+            add(u + j * n, v + j * n, w);
+            add(v + j * n, u + j * n, w);
+            add(u + (j - 1) * n, v + j * n, w &gt;&gt; 1);
+            add(v + (j - 1) * n, u + j * n, w &gt;&gt; 1);
+        }
+    }
+
+//  for(register int i = 1;i &lt;= k;i++)
+//      add(t + (i - 1) * n, t + i * n, 0);
+    dijkstra();
+    int ans = inf;
+    for(register int i = 1;i &lt;= k + 1;i++)
+        ans = min(ans, dist[t + (i - 1) * n]);
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}</code></pre></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">姝雨墨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http:/oldsuold.github.io/2019/02/24/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/">http:/oldsuold.github.io/2019/02/24/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http:/oldsuold.github.io">YuMo Shu の Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OI/">OI    </a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/02/26/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/"><img class="prev_cover lozad" data-src="/img/post_images/pic (16).jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span> 【luogu-1083】【NOIP2012】借教室		</span></div></a></div><div class="next-post pull-right"><a href="/2019/02/24/e3-80-90luogu-4568-e3-80-91-e3-80-90jloi2011-e3-80-91-e9-a3-9e-e8-a1-8c-e8-b7-af-e7-ba-bf/"><img class="next_cover lozad" data-src="/img/post_images/pic (12).jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span> 【luogu-4568】【JLOI2011】飞行路线		</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/02/24/e3-80-90luogu-2731-e3-80-91-e3-80-90usaco-e3-80-91-e9-aa-91-e9-a9-ac-e4-bf-ae-e6-a0-85-e6-a0-8f-riding-the-fences/" title=" 【luogu-2731】【USACO】骑马修栅栏 Riding the Fences		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (8).jpg"><div class="relatedPosts_title"> 【luogu-2731】【USACO】骑马修栅栏 Riding the Fences		</div></a></div><div class="relatedPosts_item"><a href="/2019/06/21/ant-trip/" title="【unknow】Ant-trip"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (22).jpg"><div class="relatedPosts_title">【unknow】Ant-trip</div></a></div><div class="relatedPosts_item"><a href="/2019/06/21/e4-b8-a4-e6-ae-b5-e8-a7-86-e9-a2-91/" title=" 两段视频		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (6).jpg"><div class="relatedPosts_title"> 两段视频		</div></a></div><div class="relatedPosts_item"><a href="/2019/06/17/e5-b9-b3-e8-a1-a1-e6-a0-91-treap/" title=" 平衡树——Treap		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (5).jpg"><div class="relatedPosts_title"> 平衡树——Treap		</div></a></div><div class="relatedPosts_item"><a href="/2019/06/17/e6-9c-80-e5-b0-8f-e7-94-9f-e6-88-90-e6-a0-91/" title=" 最小生成树		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (7).jpg"><div class="relatedPosts_title"> 最小生成树		</div></a></div><div class="relatedPosts_item"><a href="/2019/03/24/192/" title=" 【luogu-1494】【国家集训队】小Z的袜子		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (12).jpg"><div class="relatedPosts_title"> 【luogu-1494】【国家集训队】小Z的袜子		</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By 姝雨墨</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hello! Welcome to my blog ~ <strong>QAQ</strong></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="fa fa-moon-o nightshift" id="nightshift" title="夜间模式"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#分层图最短路问题"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">分层图最短路问题</span></a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="/js/search/local-search.js"></script><script src="/js/nightshift.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
