@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title> 【luogu-1083】【NOIP2012】借教室		 | Shu_Yu_s Mo の blog</title><meta name="description" content=" 【luogu-1083】【NOIP2012】借教室		"><meta name="keywords" content="OI"><meta name="author" content="姝雨墨"><meta name="copyright" content="姝雨墨"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/32.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http:/oldsuold.github.io/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content=" 【luogu-1083】【NOIP2012】借教室		"><meta name="twitter:description" content=" 【luogu-1083】【NOIP2012】借教室		"><meta name="twitter:image" content="http:/oldsuold.github.io/img/avatar.jpg"><meta property="og:type" content="article"><meta property="og:title" content=" 【luogu-1083】【NOIP2012】借教室		"><meta property="og:url" content="http:/oldsuold.github.io/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/"><meta property="og:site_name" content="Shu_Yu_s Mo の blog"><meta property="og:description" content=" 【luogu-1083】【NOIP2012】借教室		"><meta property="og:image" content="http:/oldsuold.github.io/img/avatar.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title=" 【luogu-1525】关押罪犯		" href="http:/oldsuold.github.io/e3-80-90luogu-1525-e3-80-91-e5-85-b3-e6-8a-bc-e7-bd-aa-e7-8a-af/"><link rel="next" title=" 【luogu-4822】【BJWC2012】冻结		" href="http:/oldsuold.github.io/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://jerryc.me/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: '添加书签',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天'
+
+  
+}</script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二分做法"><span class="toc-number">1.</span> <span class="toc-text"> 二分做法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线段树做法"><span class="toc-number">2.</span> <span class="toc-text"> 线段树做法</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/post.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">Shu_Yu_s Mo の blog</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">姝雨墨的博客，记录我的生活</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle"> 【luogu-1083】【NOIP2012】借教室		</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-02-26<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-06-22</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/luogu/">luogu</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/luogu/NOIP/">NOIP</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/luogu/NOIP/OI/">OI</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/luogu/NOIP/OI/算法/">算法</a></span><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">1.1k</span><span class="post-meta__separator">|</span><span>阅读时长: 5 分钟</span><span class="post-meta__separator">|</span><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://www.luogu.org/problemnew/show/P1083" target="_blank" rel="noopener">原题</a></p>
+<h2 id="二分做法"><a class="markdownIt-Anchor" href="#二分做法"></a> 二分做法</h2>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(mlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>的复杂度，常数还挺大的。。一直以为过不了，但是其实跑的挺快的。 你会发现，其实就是在枚举某个订单能否被接受，如果能，那这个点前面的都能；如果不能，那这个点后面的都不能；符合单调性,直接瞎<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∗</mo><mo>∗</mo></mrow><annotation encoding="application/x-tex">**</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord">∗</span></span></span></span>二分。</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;cmath&gt;
+#include&lt;cstring&gt;
+#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int _ = 1e6 + 100;
+struct Need{
+    int d;
+    int s;
+    int t;
+}ned[_];
+int A[_];
+int n, m;
+int C[_];
+inline bool check(int k)
+{
+    memset(C, 0, sizeof(C));
+//  printf(&quot;Id = %d : &quot;, k);
+    for(register int i = 1;i &lt;= k;i++)
+    {
+        C[ned[i].s] -= ned[i].d;
+        C[ned[i].t + 1] += ned[i].d;
+    }
+    int now = 0;
+    for(register int i = 1;i &lt;= n;i++)
+    {
+        now += C[i];
+        if(A[i] + now &lt; 0)
+        {
+//          printf(&quot;false\n&quot;);
+            return false; 
+        }
+    } 
+//  printf(&quot;true\n&quot;);
+    return true;
+}
+int work()
+{
+    int le = 1, ri = n;
+    int ans;
+    while(le &lt;= ri)
+    {
+        int mid = (le + ri) &gt;&gt; 1;
+        if(check(mid)) ans = mid, le = mid + 1;
+        else ri = mid - 1;
+    }
+    return ans + 1;
+}
+int main()
+{
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    for(register int i = 1;i &lt;= n;i++)
+        scanf(&quot;%d&quot;, A + i);
+    for(register int i = 1;i &lt;= m;i++)
+        scanf(&quot;%d%d%d&quot;, &amp;ned[i].d, &amp;ned[i].s, &amp;ned[i].t);
+    int ans = work();
+    if(ans &gt; n)
+        puts(&quot;0&quot;);
+    else
+        printf(&quot;-1\n%d&quot;, ans);
+    return 0;
+}
+/*
+4 3 
+20 20 20 20 
+2 1 3 
+3 2 4 
+4 2 4
+*/
+</code></pre>
+<h2 id="线段树做法"><a class="markdownIt-Anchor" href="#线段树做法"></a> 线段树做法</h2>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(mlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>以为数据结构能跑的呲呲的，但是线段树的常数……是一个尴尬的问题。。 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(mlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>的复杂度，过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^{5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span>的数据竟然困难……（吸一口<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">O_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>才能勉强过） 在使用<code>define</code>定义<code>min()</code>时，（<code>#define min(a, b) (a)&lt;(b)?(a):(b)</code>）一定不要把它使用在递归结构中，他会访问两次以上的参数，对于递归，这是致命的。 结果就是，好好的线段树跑的比暴力慢……</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;cmath&gt;
+#include&lt;cstring&gt;
+#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;algorithm&gt;
+#define inf 0x7fffffff
+using namespace std;
+const int _NODE = 3100000;
+const int _N = 1000000;
+inline int min(int x, int y)
+{
+    if(x &lt; y)
+        return x;
+    else
+        return y;
+}
+struct Node{
+    int MIN;
+    int Sum;
+    int tar;
+    Node *lson, *rson;
+    Node()
+    {
+        MIN = 0;
+        tar = 0; 
+    }
+}POOL[_NODE];
+int __tot__ = 0;
+Node * malloc_() { return &amp; POOL[__tot__++]; }
+Node * null;
+inline void updata(Node *tree)
+{
+    tree -&gt; MIN = min(tree -&gt; rson -&gt; MIN, tree -&gt; lson -&gt; MIN);
+}
+
+inline void initNode(Node * tree)
+{
+    tree -&gt; lson = tree -&gt; rson = null;
+}
+
+inline void build(Node *tree, int l, int r)
+{
+    if(l == r)
+    {
+        scanf(&quot;%d&quot;, &amp;tree -&gt; MIN); 
+        return ;
+    }
+    tree -&gt; lson = malloc_();
+    initNode(tree -&gt; lson);
+    tree -&gt; rson = malloc_();
+    initNode(tree -&gt; rson);
+    int mid = (l + r) &gt;&gt; 1;
+    build(tree -&gt; lson, l, mid);
+    build(tree -&gt; rson, mid + 1, r);
+    updata(tree);
+}
+
+inline void tar(Node * tree, int l, int r, int val)
+{
+    if(tree == null) return;
+    tree -&gt; MIN -= val;
+    tree -&gt; tar += val;
+}
+
+inline void push(Node * tree, int nowl, int nowr)
+{
+    if(nowl == nowr || tree == null) return;
+    int mid = (nowl + nowr) &gt;&gt; 1;
+    tar(tree -&gt; lson, nowl, mid, tree -&gt; tar);
+    tar(tree -&gt; rson, mid + 1, nowr, tree -&gt; tar);
+    tree -&gt; tar = 0;
+}
+inline void change(Node * tree, int l, int r, int val, int nowl,int nowr)
+{
+    if(l &lt;= nowl &amp;&amp; nowr &lt;= r)
+    {
+        tar(tree, nowl, nowr, val);
+        return ;
+    }
+    push(tree, nowl, nowr);
+    int mid = (nowl + nowr) &gt;&gt; 1;
+    if(l &lt;= mid) change(tree -&gt; lson, l, r, val, nowl, mid);
+    if(r &gt; mid) change(tree -&gt; rson, l, r, val, mid + 1, nowr);
+    updata(tree);
+}
+
+inline int query(Node * tree, int l, int r, int nowl, int nowr)
+{
+    if(l &lt;= nowl &amp;&amp; nowr &lt;= r)
+        return tree -&gt; MIN; 
+    int mid = (nowl + nowr) &gt;&gt; 1;
+    push(tree, nowl, nowr);
+    int ans = inf ;
+    if(l &lt;= mid) ans = min(ans, query(tree -&gt; lson, l, r, nowl, mid)) ;
+    if(r &gt; mid)  ans = min(ans, query(tree -&gt; rson, l, r, mid + 1, nowr));
+    return ans;
+}
+
+int main()
+{
+//  freopen(&quot;1083.in.txt&quot;, &quot;r&quot;, stdin);
+    null = malloc_();
+    int n, m;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    Node * root = malloc_();
+    build(root, 1, n);
+//  puts(&quot;Build Dnoe&quot;);
+/// printf(&quot;Memory = %d MiB\n&quot;, (sizeof(POOL)/1024/1024));
+    for(register int i = 1;i &lt;= m;i++)
+    {
+        int s, t, d;
+        scanf(&quot;%d%d%d&quot;, &amp;d, &amp;s, &amp;t);
+        change(root, s, t, d, 1, n);
+//      puts(&quot;change Dnoe&quot;);
+        int VAL = query(root, s, t, 1, n);
+//      puts(&quot;query Dnoe\n&quot;);
+//      printf(&quot;now ans = %d\n&quot;, VAL);
+        if(VAL &lt; 0)
+        {
+            printf(&quot;-1\n%d&quot;, i);
+            return 0;
+        }
+//      int op;
+//      scanf(&quot;%d&quot;, &amp;op);
+//      if(op == 2)
+//      {
+//          int x, y;
+//          scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+//          printf(&quot;In [%d, %d] Min Val = %d\n&quot;, x, y, query(root, x, y, 1, n));
+//      }
+//      else
+//      {
+//          int x, y, val;
+//          scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;val);
+//          change(root, x, y, val, 1, n);
+//      }
+    }
+    puts(&quot;0&quot;);
+    return 0;
+}
+</code></pre>
+<p>另外还有几点注意： <img alt data-src="http://47.92.113.238/Shu_Yu_Mo/wp-content/uploads/2019/02/test.png" class="lozad"></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">姝雨墨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http:/oldsuold.github.io/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/">http:/oldsuold.github.io/e3-80-90luogu-1083-e3-80-91-e3-80-90noip2012-e3-80-91-e5-80-9f-e6-95-99-e5-ae-a4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http:/oldsuold.github.io">Shu_Yu_s Mo の blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OI/">OI    </a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/e3-80-90luogu-1525-e3-80-91-e5-85-b3-e6-8a-bc-e7-bd-aa-e7-8a-af/"><img class="prev_cover lozad" data-src="/img/post_images/pic (3).png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span> 【luogu-1525】关押罪犯		</span></div></a></div><div class="next-post pull-right"><a href="/e3-80-90luogu-4822-e3-80-91-e3-80-90bjwc2012-e3-80-91-e5-86-bb-e7-bb-93/"><img class="next_cover lozad" data-src="/img/post_images/pic (10).jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span> 【luogu-4822】【BJWC2012】冻结		</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/e3-80-90luogu-2731-e3-80-91-e3-80-90usaco-e3-80-91-e9-aa-91-e9-a9-ac-e4-bf-ae-e6-a0-85-e6-a0-8f-riding-the-fences/" title=" 【luogu-2731】【USACO】骑马修栅栏 Riding the Fences		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (22).jpg"><div class="relatedPosts_title"> 【luogu-2731】【USACO】骑马修栅栏 Riding the Fences		</div></a></div><div class="relatedPosts_item"><a href="/ant-trip/" title="【unknow】Ant-trip"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (22).jpg"><div class="relatedPosts_title">【unknow】Ant-trip</div></a></div><div class="relatedPosts_item"><a href="/e4-b8-a4-e6-ae-b5-e8-a7-86-e9-a2-91/" title=" 两段视频		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (24).jpg"><div class="relatedPosts_title"> 两段视频		</div></a></div><div class="relatedPosts_item"><a href="/e5-b9-b3-e8-a1-a1-e6-a0-91-treap/" title=" 平衡树——Treap		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (24).jpg"><div class="relatedPosts_title"> 平衡树——Treap		</div></a></div><div class="relatedPosts_item"><a href="/e6-9c-80-e5-b0-8f-e7-94-9f-e6-88-90-e6-a0-91/" title=" 最小生成树		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (9).jpg"><div class="relatedPosts_title"> 最小生成树		</div></a></div><div class="relatedPosts_item"><a href="/192/" title=" 【luogu-1494】【国家集训队】小Z的袜子		"><img class="relatedPosts_cover lozad" data-src="/img/post_images/pic (6).jpg"><div class="relatedPosts_title"> 【luogu-1494】【国家集训队】小Z的袜子		</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By 姝雨墨</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hello! Welcome to my blog ~ <strong>QAQ</strong></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="fa fa-moon-o nightshift" id="nightshift" title="夜间模式"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#二分做法"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text"> 二分做法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#线段树做法"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text"> 线段树做法</span></a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="/js/search/local-search.js"></script><script src="/js/nightshift.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
